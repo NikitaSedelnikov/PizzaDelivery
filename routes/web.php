@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/', [])->name('index');
+Route::post('/', [])->name('get-good');
+Route::get('/basket', [])->name('basket');
+Route::delete('/basket', [])->name('delete-good');
+Route::get('/order', [])->name('order');
+Route::post('/order', [])->name('make-order');
