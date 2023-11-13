@@ -1,6 +1,9 @@
 <template>
     <div class="main">
         <div><h1>Оформить заказ</h1></div>
+        <div class="route">
+            <a :href="homeRoute"><button class="button">На главную</button></a>
+        </div>
         <div class="order-main">
             <div class="order-form">
                 <form :action="order" method="post" class="form">
@@ -22,7 +25,8 @@
 <script>
 export default {
     props: [
-        'order'
+        'order',
+        'homeRoute'
     ],
     data: () => ({
         csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
