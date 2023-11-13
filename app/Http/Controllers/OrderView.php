@@ -4,18 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Goods;
 use App\Models\Order;
 use App\Models\Order2Good;
 
 class OrderView extends Controller
 {
-    public function showOrder ()
+    public function showOrder (): mixed
     {
         return view('order-form');
     }
 
-    public function makeOrder (Request $request)
+    public function makeOrder (Request $request): mixed
     {
         $name = $request->get('name');
         $phone = $request->get('phone');

@@ -5,12 +5,11 @@
         </div>
     </div>
 </template>
+
 <script>
-export default {
-
-
-}
+export default {}
 </script>
+
 <style scoped>
 .main {
     width: 100%;
@@ -18,8 +17,8 @@ export default {
     padding: 0px 0px;
     background-color: #fceade;
     background-size: 100%;
-
 }
+
 .cards {
     width: 40%;
     height: auto;
@@ -29,6 +28,5 @@ export default {
     justify-content: space-evenly;
     flex-wrap: wrap;
 }
-
 
 </style>

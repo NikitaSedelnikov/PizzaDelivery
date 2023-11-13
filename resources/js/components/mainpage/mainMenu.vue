@@ -16,29 +16,10 @@
 
 <script>
 export default {
-    data() {
-        return {
-            countGoods: []
-        }
-    },
     props: [
         'homeRoute',
         'basketRoute'
     ],
-    methods: {
-        getOrder()
-        {
-            this.countGoods = JSON.parse(localStorage.getItem('basket'))
-        },
-        total(){
-            let sum = 0;
-            for (let i = 0; i < this.countGoods.length; i++)
-            {
-                sum += this.countGoods[i].count;
-            }
-            return sum;
-        }
-    }
 }
 </script>
 
@@ -48,8 +29,8 @@ export default {
     height: 10vh;
     background-color: #ff8a5b;
     border-bottom: 1px solid;
-
 }
+
 .interactive{
     width: 1920px;
     height: 100%;
@@ -58,6 +39,7 @@ export default {
     align-items: center;
     justify-content: space-evenly;
 }
+
 .icon {
     width: 150px;
     height: auto;
@@ -72,6 +54,7 @@ export default {
     height: 100px;
     width: auto;
 }
+
 .basket {
     width: 100px;
     height: auto;
@@ -82,8 +65,4 @@ export default {
     transform: scale(105%);
 }
 
-.goods-count {
-    width: 16%;
-    border-radius: 50px;
-}
 </style>

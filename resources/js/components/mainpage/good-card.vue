@@ -16,8 +16,6 @@ export default {
     props: [
     'good',
     ],
-    mounted() {
-    },
     methods: {
         addToBasket(id, name, price, description) {
             let basket = localStorage.getItem('basket')
@@ -28,17 +26,16 @@ export default {
                 'price': price,
                 'count': 1
             }]
+
             if (!basket){
                 localStorage.setItem('basket', JSON.stringify(newBasket));
             } else {
                 basket = JSON.parse(basket)
-
                 basket.forEach(goodInBasket => {
                     if (goodInBasket.id === id) {
                         goodInBasket.count = Number(goodInBasket.count) + 1
                         newBasket = null
                     }
-
                 })
                 Array.prototype.push.apply(basket, newBasket)
                 localStorage.setItem('basket', JSON.stringify(basket))
@@ -50,6 +47,7 @@ export default {
 </script>
 
 <style scoped>
+
 .good-card{
     flex: 0 0 25%;
     width: 15%;
@@ -57,8 +55,8 @@ export default {
     flex-direction: column;
     align-content: space-between;
     padding: 3% 2%;
-
 }
+
 .good-card img{
     width: 100%;
     height: auto;
@@ -73,14 +71,17 @@ export default {
 .description-card{
     height: 40%;
 }
+
 .price-and-button{
     width: 100%;
     display: flex;
     justify-content: space-between;
 }
+
 .price-and-button p {
     font-weight: bold;
 }
+
 .price-and-button button {
     width: 50%;
     border-radius: 24px;
@@ -89,6 +90,7 @@ export default {
     box-shadow: 0 -3px #B6514A inset;
     transition: 0.2s;
 }
+
 .price-and-button button:hover {
     background-color: #DB6E53;
 }
@@ -97,6 +99,5 @@ export default {
     background-color: #C9604F;
     box-shadow: 0 -3px #8A3D38 inset;
 }
-
 
 </style>
