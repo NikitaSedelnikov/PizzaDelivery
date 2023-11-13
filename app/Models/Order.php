@@ -13,7 +13,7 @@ class Order extends Model
         'name',
         'phone',
         'comment',
-        'adress',
+        'address',
         'price',
     ];
 }
